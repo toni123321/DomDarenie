@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="Login.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="./Register.css">
+</head>
+<body>
+
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="Home.html">Дом Дарения</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li class="active"><a class="pr" href="Home.html">Начало</a></li>
+        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Дарете сега <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Онлайн</a></li>
+            <li><a href="#">Пунктове</a></li>
+
+          </ul>
+        </li>
+        <li><a href="#">За Проекта</a></li>
+        <li><a href="#">Контакти</a></li>
+
+        <section class="all_log">
+          <li class = "log "><a href="#">Вход</a></li>
+          <li class = "log"><a href="#">Регистрация</a></li>
+        </section>
+      </ul>
+    </div>
+  </nav>
+<div class= "post">
+  <img src="https://www.wildwoodhillsranch.org/wp-content/uploads/2016/10/Register-icon-01.png" alt="Register">
+  <h2>Register</h2>
+  <form action="/action_page.php" target="_blank" method="POST">
+    First Name<br>
+    <br>
+    <input type="text" id="firstName" placeholder="First Name" required autofocus>
+    <br>
+    <br>Second Name<br>
+    <br>
+    <input type="text" id="secondName" placeholder="Second Name" required autofocus>
+    <br>
+    <br>Username<br>
+    <br>
+    <input type="text" id="userName" placeholder="Username" required autofocus>
+    <br>
+    <br>Email<br>
+    <br>
+    <input type="email" id="inputEmail" placeholder="Email" required autofocus>
+    <br>
+    <br>Password<br>
+    <br>
+    <input type="password" id="inputPassword" placeholder="Password" required>
+    <br>
+    <br>Confirm Password<br>
+    <br>
+    <input type="password" id="confirm_password" placeholder="Confirm Password" required>
+
+
+
+
+    <script>
+        var password = document.getElementById("inputPassword")
+        , confirm_password = document.getElementById("confirm_password");
+
+        function validatePassword(){
+        if(password.value != confirm_password.value) {
+          confirm_password.setCustomValidity("Passwords Don't Match");
+        } else {
+          confirm_password.setCustomValidity('');
+        }
+        }
+
+        password.onchange = validatePassword;
+        confirm_password.onkeyup = validatePassword;
+    </script>
+
+    <br><br>
+    <input type="submit" value="Register">
+  </form>
+</div>
+
+
+
+</body>
+</html>
