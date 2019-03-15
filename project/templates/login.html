@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <title>Log in</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="Login.css">
+
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="../static/css/login.css">
+
+
+    <link rel="stylesheet" type="text/css" href="Login.css">
 </head>
 <body>
 
@@ -18,27 +19,29 @@
       </div>
       <ul class="nav navbar-nav">
         <li class="active"><a class="pr" href="Home.html">Начало</a></li>
-        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Дарете сега <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Онлайн</a></li>
-            <li><a href="#">Пунктове</a></li>
 
-          </ul>
-        </li>
+        <div class="dropdown">
+          <button class="dropbtn">Дарете сега</button>
+            <div class="dropdown-content">
+              <a href="#">Онлайн</a>
+              <a href="#">Пунктове</a>
+            </div>
+        </div>
         <li><a href="#">За Проекта</a></li>
         <li><a href="#">Контакти</a></li>
 
-        <section class="all_log">
-          <li class = "log "><a href="#">Вход</a></li>
-          <li class = "log"><a href="#">Регистрация</a></li>
-        </section>
+
       </ul>
+    </div>
+    <div class="all_log">
+      <a href="#">Вход</a></li>
+    <a href="#">Регистрация</a></li>
     </div>
   </nav>
 
 
 <div class= "post">
-
+  <img src="https://www.wildwoodhillsranch.org/wp-content/uploads/2016/10/Register-icon-01.png" alt="log in">
   <h2>Log in</h2>
   <form action="/action_page.php" target="_blank" method="POST">
     Username<br>
