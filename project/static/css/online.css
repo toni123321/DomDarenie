@@ -1,0 +1,21 @@
+body{
+		background-image: url("snimka.jpg");
+		background-repear: no-repeat;
+		background-size: 100%;
+		background-position: 100% 5%;
+	}
+  img{
+    weight: 100px;
+    height: 100px;
+  }
+
+
+.POST {
+  margin-top: 200px;
+  display: block;
+  float:inherit;
+  color: blue;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
