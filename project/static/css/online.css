@@ -1,6 +1,5 @@
 body{
-		background-image: url("snimka.jpg");
-		background-repear: no-repeat;
+		background-image: url("../img/snimka.jpg");
 		background-size: 100%;
 		background-position: 100% 5%;
 	}
@@ -11,11 +10,11 @@ body{
 
 
 .POST {
+
   margin-top: 200px;
   display: block;
-  float:inherit;
   color: blue;
   text-align: center;
   padding: 14px 16px;
-  text-decoration: none;
+
 }
