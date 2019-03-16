@@ -39,16 +39,12 @@
 
 .user_link {
   float: right;
-};
-
-
-
-ul {
-  background: #111;
-    list-style: none;
-    margin: 0;
-    padding-left: 0;
 }
+
+
+
+
+
 
 li {
     color: #111;

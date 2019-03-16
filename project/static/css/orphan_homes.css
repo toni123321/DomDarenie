@@ -3,7 +3,7 @@ body {
 }
 
 
-.content li {
+.content ol li {
 	background-color:white;
 	margin-top:150px;
 	color:blue;
