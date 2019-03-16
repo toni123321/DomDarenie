@@ -1,21 +1,22 @@
 body{
-		background-image: url("../img/snimka1.png");
+		background-image: url("https://www1.bac-assets.com/deposits/spa-assets/images/assets-images-site-deposits-engagement-deposits-module-savings_child_overview_lg-crushed-CSX84409337.jpg");
 		background-repeat: no-repeat;
 		background-size: 100%;
 		background-position: 100% 5%;
 }
 p {
 	text-align: center;
-	margin-top: 50px;
-	margin-left: 33%;
+	margin-top: 60px;
+	margin-left: 5%;
 	font-size: 30px;
 	font-family: "Comic Sans MS", cursive, sans-serif;
 	max-width:500px;
-	word-wrap:break-word;
 	color: black;
 }
 h1 {
-	text-align: center;
+	text-align: left;
+	margin-top: 50px;
+	margin-left: 6%;
 	font-size: 80px;
 	font-family: "Comic Sans MS", cursive, sans-serif;
 
