@@ -1,3 +1,18 @@
 body {
 	background:lighblue;
 }
+
+
+.content li {
+	background-color:white;
+	margin-top:150px;
+	color:blue;
+}
+
+.info {
+	background-color: #2196F3;
+}
+
+.info:hover {
+	background: #0b7dda;
+}
