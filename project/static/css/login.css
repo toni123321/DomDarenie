@@ -9,7 +9,7 @@ img{
 }
 
 body{
-	background-image: url("snimka.jpg");
+	background-image: url("../img/snimka.jpg");
 	background-repear: no-repeat;
 	background-size: 100%;
 	background-position: 100% 5%;
@@ -23,4 +23,3 @@ body{
   padding: 14px ;
 
 }
-

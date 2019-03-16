@@ -1,9 +1,9 @@
 #navbar{
   list-style-type: none;
-  background-color: #333;
-  height: 30px;
+  background-color: black;
+  height: 60px;
   width: 100%;
-  overflow: hidden;
+
   margin: 0;
   padding: 0;
 }
@@ -40,3 +40,48 @@
 .user_link {
   float: right;
 };
+
+
+
+ul {
+  background: #111;
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+}
+
+li {
+    color: #111;
+  background: #111;
+    display: block;
+    float: left;
+    padding: 5px;
+    position: relative;
+
+}
+
+li a {
+  color: #fff;
+}
+
+li:hover {
+    background: black;
+
+}
+
+ul li ul {
+    background: black;
+    visibility: hidden;
+    display: none;
+}
+
+ul li:hover > ul,
+ul li ul:hover {
+  visibility: visible;
+  opacity: 1;
+  display: block;
+}
+.punct{
+  margin-left: 20px;
+
+}
