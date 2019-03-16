@@ -1,4 +1,12 @@
-img{
-  weight: 100px;
-  height: 100px;
+.section {
+	color:white;
+}
+.heading {
+	color:#DAA520!important;
+}
+body{
+	background-image: url("../img/user_img.jpg");
+	background-repeat: no-repeat;
+	background-size: 100%;
+	background-position: 30% 22%;
 }
