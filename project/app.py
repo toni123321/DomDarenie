@@ -46,17 +46,14 @@ def register():
 def about():
 	return render_template('about.html')
 	
-@app.route('/donate')
+@app.route('/donators')
 def donate():
-	return render_template('donate.html')
+	return render_template('donators.html')
 
 @app.route('/online')
 def online():
 	return render_template('online.html')
 
-@app.route('/posts')
-def posts():
-	return render_template('posts.html')
 	
 @app.route('/contacts')
 def contacts():
