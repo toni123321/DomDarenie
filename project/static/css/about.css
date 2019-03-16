@@ -1,6 +1,14 @@
 body{
-		background-image: url("snimka.jpg");
+		background-image: url("../img/snimka.jpg");
 		background-repear: no-repeat;
 		background-size: 100%;
 		background-position: 100% 5%;
+}
+p {
+	text-align: center;
+	margin-top: 40px;
+}
+h1 {
+	text-align: center;
+
 }
