@@ -1,0 +1,14 @@
+body{
+		background-image: url("../img/snimka.jpg");
+		background-repeat: no-repeat;
+		background-size: 100%;
+		background-position: 100% 5%;
+}
+
+h1 {
+  padding-top: 100px;
+	text-align: center;
+	font-size: 25px;
+	font-family: "Comic Sans MS", cursive, sans-serif;
+
+}
