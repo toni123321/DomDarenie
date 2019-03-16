@@ -1,7 +1,7 @@
 from flask import Flask, render_template, flash, request
-from wtforms import Form, TextField, TextAreaField, validators, StringField, SubmitField
+import sqlite3
 
-DEBUG = True
+
 app = Flask(__name__)
 
 @app.route('/')
@@ -22,6 +22,24 @@ def login():
 	
 @app.route('/register')
 def register():
+	"""msga = "initial msg"
+	try:   			
+   		with sqlite3.connect("database.db") as con:
+   			cur = con.cursor()
+   			cur.execute("select * from user")
+   			con.execute("INSERT INTO user (fname, sname, email, username, password) VALUES ('Gosho', 'Goshev', 'goshko@abv', 'goshev', 'neshto')")
+   			con.commit()
+   			msga = "Record succesfully added"
+   			msga = cur.fetchall()
+
+
+   	except:
+   		con.rollback()
+   		msga = "error"
+
+   	finally:
+   		return render_template('result.html', msg = msga)
+   		con.close()"""
 	return render_template('register.html')
 
 @app.route('/about')
@@ -47,8 +65,27 @@ def contacts():
 @app.route('/result',methods = ['POST', 'GET'])
 def result():
    if request.method == 'POST':
-      result = request.form
-      return render_template("result.html",result = result)
+   		try:
+   			fn = request.form['fname']
+   			sn = request.form['sname']
+   			us = request.form['username']
+   			em = request.form['email']
+   			ps = request.form['password']
+
+   			with sqlite3.connect("database.db") as con:
+   				cur = con.cursor()
+   				cur.execute("INSERT INTO user (fname, sname, email, username, password) VALUES (?, ?, ?, ?, ?)", (fn, sn, em, us, ps) )
+   				con.commit()
+   				msga = "Record succesfully added"
+
+   		except:
+   			con.rollback()
+   			msga = "error"
+
+   		finally:
+   			con.close()
+
+
 
 if __name__ == '__main__':
    app.run()
