@@ -7,17 +7,20 @@ body{
 
 
 .menu{
-  padding-top: 50px;
+  	padding-top: 50px;
     text-align: center;
+
 }
 
 .menu2{
     text-align: center;
+		font-weight: bold;
 }
 
 p{
     font-size: 25px;
     margin: 20px;
+		font-weight: bold;
 }
 
 img{

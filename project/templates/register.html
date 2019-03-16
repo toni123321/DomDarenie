@@ -1,69 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <title>Online</title>
     <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" type="text/css" href="Login.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="Login.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
     <link rel="stylesheet" type="text/css" href="../static/css/register.css">
     <link rel="stylesheet" type="text/css" href="../static/css/nav-bar.css">
 </head>
 <body>
 
-<div>
+    <div>
 
-  <ul id="navbar">
-     <li class="navbar_link"><a class="nav_link" href="/home">Начало</a></li>      
-      	<li class="navbar_link"><a class="nav_link" href="/contacts">Контакти</a></li>
-		<li class="navbar_link"><a class="nav_link" href="/about">За проекта</a></li>
-		<li class="navbar_link"><a class="nav_link" href="" >Дарете сега</a>
+      <ul id="navbar">
+          <li class="navbar_link"><a class="nav_link" href="/home">Начало</a></li>
+          <li class="navbar_link"><a class="nav_link" href="/contacts">Контакти</a></li>
+    	    <li class="navbar_link"><a class="nav_link" href="/about">За проекта</a></li>
+    		  <li class="navbar_link"><a class="nav_link" href="" >Дарете сега</a>
           <ul>
-            <li>
-              <a href="/online">Онлайн</a>
-              <a class = "punct" href="/donators">Топ 3 дарители</a>
-            </li>
+                <li>
+                      <a href="/online">Онлайн</a>
+                      <a class = "punct" href="/donators">Топ 3 дарители</a>
+                </li>
+    		   </ul>
+      		</li>
+              <li class="navbar_link user_link"><span class="symbol glyphicon glyphicon-user"></span><a class="nav_link user_link" href="/register">Регистрация</a></li>
+              <li class="navbar_link user_link"><span class="symbol glyphicon glyphicon-log-in"></span><a class="nav_link user_link" href="/login">Влизане</a></li>
+          </ul>
+    </div>
 
-		   </ul>
-		</li>
-      <li class="navbar_link user_link"><span class="symbol glyphicon glyphicon-user"></span><a class="nav_link user_link" href="/register">Регистрация</a></li>
-      <li class="navbar_link user_link"><span class="symbol glyphicon glyphicon-log-in"></span><a class="nav_link user_link" href="/login">Влизане</a></li>
-    </ul>
-</div>
-
-<div class= "post">
-  <img src="https://www.wildwoodhillsranch.org/wp-content/uploads/2016/10/Register-icon-01.png" alt="Register">
-  <h2>Register</h2>
-  <form action="http://localhost:5000/result" target="" method="POST">
-    First Name<br>
-    <br>
-    <input type="text" id="firstName" name="fname" placeholder="First Name" required autofocus>
-    <br>
-    <br>Second Name<br>
-    <br>
-    <input type="text" id="secondName" name="sname" placeholder="Second Name" required autofocus>
-    <br>
-    <br>Username<br>
-    <br>
-    <input type="text" id="userName" name="username" placeholder="Username" required autofocus>
-    <br>
-    <br>Email<br>
-    <br>
-    <input type="email" id="inputEmail" name="email" placeholder="Email" required autofocus>
-    <br>
-    <br>Password<br>
-    <br>
-    <input type="password" id="inputPassword" name="password" placeholder="Password" required>
-    <br>
-    <br>Confirm Password<br>
-    <br>
-    <input type="password" id="confirm_password" name="second_pass" placeholder="Confirm Password" required>
-    <br><br>
-    <input type="submit" value="Register">
-  </form>
-</div>
+    <div class= "post">
+      <img src="https://www.wildwoodhillsranch.org/wp-content/uploads/2016/10/Register-icon-01.png" alt="Register">
+        <h2>Register</h2>
+        <form action="http://localhost:5000/result" target="" method="POST">
+              First Name<br>
+              <br>
+              <input type="text" id="firstName" name="fname" placeholder="First Name" required autofocus>
+              <br>
+              <br>Second Name<br>
+              <br>
+              <input type="text" id="secondName" name="sname" placeholder="Second Name" required autofocus>
+              <br>
+              <br>Username<br>
+              <br>
+              <input type="text" id="userName" name="username" placeholder="Username" required autofocus>
+              <br>
+              <br>Email<br>
+              <br>
+              <input type="email" id="inputEmail" name="email" placeholder="Email" required autofocus>
+              <br>
+              <br>Password<br>
+              <br>
+              <input type="password" id="inputPassword" name="password" placeholder="Password" required>
+              <br>
+              <br>Confirm Password<br>
+              <br>
+              <input type="password" id="confirm_password" name="second_pass" placeholder="Confirm Password" required>
+              <br><br>
+              <input type="submit" value="Register">
+        </form>
+    </div>
 
 
 
