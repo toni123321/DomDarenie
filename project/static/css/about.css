@@ -1,14 +1,22 @@
 body{
-		background-image: url("../img/snimka.jpg");
-		background-repear: no-repeat;
+		background-image: url("../img/snimka.jpg");	
+		background-repeat: no-repeat;
 		background-size: 100%;
 		background-position: 100% 5%;
 }
 p {
 	text-align: center;
-	margin-top: 40px;
+	margin-top: 50px;
+	margin-left: 34%;
+	font-size: 30px;
+	font-family: "Comic Sans MS", cursive, sans-serif;
+	max-width:500px; 
+	word-wrap:break-word;
+	color: black;
 }
 h1 {
 	text-align: center;
-
+	font-size: 80px;
+	font-family: "Comic Sans MS", cursive, sans-serif;
+	
 }
