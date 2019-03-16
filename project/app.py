@@ -63,7 +63,7 @@ def online():
 def contacts():
 	return render_template('contacts.html')
 
-@app.route('/result',methods = ['POST', 'GET'])
+@app.route('/result', methods = ['POST', 'GET'])
 def result():
    if request.method == 'POST':
    		try:
@@ -85,7 +85,34 @@ def result():
 
    		finally:
    			con.close()
+   			return render_template('result.html', msg = msga)
 
+
+@app.route('/res', methods = ['POST', 'GET'])
+def res():
+	if request.method == 'POST':
+		msga = "initial msg"
+		try:
+			us = request.form['username']
+			ps = request.form['password']
+
+			with sqlite3.connect("database.db") as con:
+				cur = con.cursor()
+				cur.execute("select * from user WHERE username = ? AND password = ?", (us, ps))
+				con.commit()
+				
+				if(cur.fetchone() == None):
+					#msga = cur.fetchall()
+					raise Exception()
+				else:
+					msga = "There is user with that nickname" 
+		except :
+			con.rollback()
+			msga = "Username and password don't match"
+			#msga = cur.fetchall()
+		finally:
+			con.close()
+			return render_template('res.html', msg = msga)
 
 
 if __name__ == '__main__':
