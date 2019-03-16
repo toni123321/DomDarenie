@@ -1,5 +1,9 @@
 body{
 		background-image: url("../img/snimka.jpg");
+<<<<<<< HEAD
+=======
+		background-repear: no-repeat;
+>>>>>>> Top3Donators
 		background-size: 100%;
 		background-position: 100% 5%;
 	}
@@ -10,8 +14,12 @@ body{
 
 
 .POST {
+<<<<<<< HEAD
 
   margin-top: 200px;
+=======
+  margin-top: 50px;
+>>>>>>> Top3Donators
   display: block;
   color: blue;
   text-align: center;

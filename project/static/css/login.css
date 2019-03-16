@@ -10,7 +10,11 @@ img{
 
 body{
 	background-image: url("../img/snimka.jpg");
+<<<<<<< HEAD
 	background-repeat: no-repeat;
+=======
+	background-repear: no-repeat;
+>>>>>>> Top3Donators
 	background-size: 100%;
 	background-position: 100% 5%;
 }
@@ -21,5 +25,4 @@ body{
   color: blue;
   text-align: center;
   padding: 14px ;
-
 }

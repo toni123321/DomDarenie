@@ -1,0 +1,25 @@
+body{
+  background-image: url("https://www.freeiconspng.com/uploads/kids-png--11.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: 100% 5%;
+
+}
+img {
+  padding-top: 50px;
+  margin-bottom: 50px;
+  margin-left: 230px;
+}
+p {
+
+  margin-left: 90px;
+  font-family: Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text", "Times New Roman", serif; font-size: 25px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 20px;
+}
+h3 {
+  padding-top: 250px;
+  margin-left: 90px;
+  font-family: Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text", "Times New Roman", serif; font-size: 40px; font-style: normal; font-variant: normal; font-weight: bold; line-height: 15px;
+}
+.text {
+  font-family: Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text", "Times New Roman", serif; font-size: 18px; font-style: normal; font-variant: normal; font-weight: bold; line-height: 15px;
+}
