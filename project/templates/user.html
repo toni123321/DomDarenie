@@ -7,62 +7,59 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Title</title>
+    <title>User</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
-
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css" integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
 
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="../static/css/nav-bar.css">
     <link rel="stylesheet" type="text/css" href="../static/css/user.css">
-    
+
 </head>
 
 <body>
 
-  <div>
+    <div>
+        <ul id="navbar">
+            <li class="navbar_link"><a class="nav_link" href="/home">Начало</a></li>
+            <li class="navbar_link"><a class="nav_link" href="/contacts">Контакти</a></li>
+            <li class="navbar_link"><a class="nav_link" href="/about">За проекта</a></li>
+            <li class="navbar_link"><a class="nav_link" href="#" >Дарете сега</a>
+                <ul>
+                    <li>
+                        <a href="/online">Онлайн</a>
+                        <a class = "punct" href="/donators">Топ 3 Дарители</a>
+                    </li>
+                </ul>
 
-    <ul id="navbar">
-      <li class="navbar_link"><a class="nav_link" href="/home">Начало</a></li>
-      <li class="navbar_link"><a class="nav_link" href="/contacts">Контакти</a></li>
-      <li class="navbar_link"><a class="nav_link" href="/about">За проекта</a></li>
-      <li class="navbar_link"><a class="nav_link" href="#" >Дарете сега</a>
-          <ul>
-            <li>
-              <a href="/online">Онлайн</a>
-              <a class = "punct" href="/donators">Топ 3 Дарители</a>
-            </li>
-
+            <li class="navbar_link user_link"><span class="symbol glyphicon glyphicon-user"></span><a class="nav_link user_link" href="/register">Регистрация</a></li>
+            <li class="navbar_link user_link"><span class="symbol glyphicon glyphicon-log-in"></span><a class="nav_link user_link" href="/login">Влизане</a></li>
         </ul>
-        
-        <li class="navbar_link user_link"><span class="symbol glyphicon glyphicon-user"></span><a class="nav_link user_link" href="/register">Регистрация</a></li>
-        <li class="navbar_link user_link"><span class="symbol glyphicon glyphicon-log-in"></span><a class="nav_link user_link" href="/login">Влизане</a></li>
-      </ul>
-  </div>
+    </div>
 
-</div>
-  <div class = "section" >
-      		<h2 class="heading">Вие успешно се регистрирахте!</h2>
-            <h1 class="heading"><u>На Вашето внимание са топ 3 пунктове</u></h1>
-            <br>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-sm-4">
-                            <h3>BULMAG</h3>
-                              <p>Младост IV, ул. "Васил Радославов" 6, Бизнес Парк София (зад Технополис)<br> понеделник - неделя: 10:00 - 20:00 часа</p>
-                        </div>
-                            <div class="col-sm-4">
-                              <h3>PROHELP</h3>
-                              <p>ул."Оборище"18, Mall Veliko Tarnovo, ниво 3 <br>понеделник - неделя: 10:00 - 20:00 часа</p>
-                            </div>
-                            <div class="col-sm-4">
-                                <h3>CHILDHELP</h3>
-                                <p>бул. Транспортна 31, Mall Burgas Plaza <br>Понеделник - Неделя: 10:00 - 22:00</p>
-                            </div>
+    <div class = "section" >
+        <h2 class="heading">Вие успешно се регистрирахте!</h2>
+        <h1 class="heading"><u>На Вашето внимание са топ 3 пунктове</u></h1>
+        <br>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <h3>TUES</h3>
+                        <p>1750 ж.к. Младост 1, София <br> понеделник - петък: 08:00 - 20:00 часа</p>
                     </div>
-                </div>
-	</div>
+                    <div class="col-sm-4">
+                        <h3>BULMAG</h3>
+                        <p>Младост IV, ул. "Васил Радославов" 6, Бизнес Парк София (зад Технополис)<br> понеделник - неделя: 10:00 - 20:00 часа</p>
+                  </div>
+                      </div>
+                          <div class="col-sm-4">
+                              <h3>CHILDHELP</h3>
+                              <p>бул. Транспортна 31, Mall Burgas Plaza <br>Понеделник - Неделя: 10:00 - 22:00</p>
+                          </div>
+                      </div>
+                  </div>
+            </div>
+      </div>
 
 </body>
-
 </html>

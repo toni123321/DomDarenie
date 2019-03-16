@@ -1,59 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <title>Contacts</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="../static/css/contacts.css">
     <link rel="stylesheet" type="text/css" href="../static/css/nav-bar.css">
+
 </head>
 <body>
 
-
-
-  <div>
-
-    <ul id="navbar">
-		<li class="navbar_link"><a class="nav_link" href="/home">Начало</a></li>
-		<li class="navbar_link"><a class="nav_link" href="/contacts">Контакти</a></li>
-		<li class="navbar_link"><a class="nav_link" href="/about">За проекта</a></li>
-		<li class="navbar_link"><a class="nav_link" href="" >Дарете сега</a>
-          <ul>
-            <li>
-              <a href="/online">Онлайн</a>
-              <a class = "punct" href="/donators">Топ 3 дарители</a>
-            </li>
-
-		   </ul>
-		</li>
-		<li class="navbar_link"><a class="nav_link" href="/orphan_homes">Домове</a>
+    <div>
+        <ul id="navbar">
+    		<li class="navbar_link"><a class="nav_link" href="/home">Начало</a></li>
+    		<li class="navbar_link"><a class="nav_link" href="/contacts">Контакти</a></li>
+    		<li class="navbar_link"><a class="nav_link" href="/about">За проекта</a></li>
+    		<li class="navbar_link"><a class="nav_link" href="" >Дарете сега</a>
+            <ul>
+                <li>
+                  <a href="/online">Онлайн</a>
+                  <a class = "punct" href="/donators">Топ 3 дарители</a>
+                </li>
+    		    </ul>
+    		</li>
+    		<li class="navbar_link"><a class="nav_link" href="/orphan_homes">Домове</a>
         {%if user_login%}
-       <li class="navbar_link user_link"><span class="symbol glyphicon glyphicon-log-in"></span><a class="nav_link user_link" href="/logout">Излизане</a></li>
-      {% else %}
-       <li class="navbar_link"><a class="nav_link" href="/orphan_homes">Домове</a>
+        <li class="navbar_link user_link"><span class="symbol glyphicon glyphicon-log-in"></span><a class="nav_link user_link" href="/logout">Излизане</a></li>
+        {% else %}
+        <li class="navbar_link"><a class="nav_link" href="/orphan_homes">Домове</a>
         <li class="navbar_link user_link"><span class="symbol glyphicon glyphicon-user"></span><a class="nav_link user_link" href="/register">Регистрация</a></li>
         <li class="navbar_link user_link"><span class="symbol glyphicon glyphicon-log-in"></span><a class="nav_link user_link" href="/login">Влизане</a></li>
-      {% endif %}
-    </ul>
-      </ul>
-  </div>
+        {% endif %}
+    </div>
 
-  <div class = "menu">
-    <img src="https://cdn2.iconfinder.com/data/icons/iphone-x-feature/64/iphonexiconCvt_IphoneX-512.png" alt="Tel">
-    <img src="https://cdn0.iconfinder.com/data/icons/thin-communication-messaging/57/thin-036_bubble_comment_chat_message-512.png" alt="Messege">
-  </div>
-  <div class = "menu2">
-    <p>Tel: 089 783 4411</p>
-    <p>Mail:  domdarenie@gmail.com<p>
-  </div>
-
-
-
-
+    <div class = "menu">
+        <img src="https://cdn2.iconfinder.com/data/icons/iphone-x-feature/64/iphonexiconCvt_IphoneX-512.png" alt="Tel">
+        <img src="https://cdn0.iconfinder.com/data/icons/thin-communication-messaging/57/thin-036_bubble_comment_chat_message-512.png" alt="Messege">
+    </div>
+    <div class = "menu2">
+        <p>Tel: 089 783 4411</p>
+        <p>Mail:  domdarenie@gmail.com<p>
+    </div>
 
 </body>
 </html>

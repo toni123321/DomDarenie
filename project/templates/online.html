@@ -1,58 +1,52 @@
  <!DOCTYPE html>
 <html lang="en">
 <head>
+  
     <title>Online</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="../static/css/nav-bar.css">
     <link rel="stylesheet" type="text/css" href="../static/css/online.css">
+
 </head>
 <body>
 
-  <div>
+    <div>
+        <ul id="navbar">
+          	<li class="navbar_link"><a class="nav_link" href="/home">Начало</a></li>
+            <li class="navbar_link"><a class="nav_link" href="/contacts">Контакти</a></li>
+          	<li class="navbar_link"><a class="nav_link" href="/about">За проекта</a></li>
+          	<li class="navbar_link"><a class="nav_link" href="" >Дарете сега</a>
+                <ul>
+                    <li>
+                        <a href="/online">Онлайн</a>
+                        <a class = "punct" href="/donators">Топ 3 дарители</a>
+                    </li>
+          		  </ul>
+          		</li>
+          	<li class="navbar_link"><a class="nav_link" href="/orphan_homes">Домове</a>
+            {%if user_login%}
+            <li class="navbar_link user_link"><span class="symbol glyphicon glyphicon-log-in"></span><a class="nav_link user_link" href="/logout">Излизане</a></li>
+            {% else %}
+            <li class="navbar_link"><a class="nav_link" href="/orphan_homes">Домове</a>
+            <li class="navbar_link user_link"><span class="symbol glyphicon glyphicon-user"></span><a class="nav_link user_link" href="/register">Регистрация</a></li>
+            <li class="navbar_link user_link"><span class="symbol glyphicon glyphicon-log-in"></span><a class="nav_link user_link" href="/login">Влизане</a></li>
+            {% endif %}
+        </ul>
+    </div>
 
-    <ul id="navbar">
-		<li class="navbar_link"><a class="nav_link" href="/home">Начало</a></li>
-      	<li class="navbar_link"><a class="nav_link" href="/contacts">Контакти</a></li>
-		<li class="navbar_link"><a class="nav_link" href="/about">За проекта</a></li>
-		<li class="navbar_link"><a class="nav_link" href="" >Дарете сега</a>
-          <ul>
-            <li>
-              <a href="/online">Онлайн</a>
-              <a class = "punct" href="/donators">Топ 3 дарители</a>
-            </li>
+        <div class = "POST">
+            <img src="https://cdn.pixabay.com/photo/2015/05/26/09/37/paypal-784404_960_720.png" alt="Register">
 
-		   </ul>
-		</li>
-		<li class="navbar_link"><a class="nav_link" href="/orphan_homes">Домове</a>
-       {%if user_login%}
-       <li class="navbar_link user_link"><span class="symbol glyphicon glyphicon-log-in"></span><a class="nav_link user_link" href="/logout">Излизане</a></li>
-      {% else %}
-       <li class="navbar_link"><a class="nav_link" href="/orphan_homes">Домове</a>
-        <li class="navbar_link user_link"><span class="symbol glyphicon glyphicon-user"></span><a class="nav_link user_link" href="/register">Регистрация</a></li>
-        <li class="navbar_link user_link"><span class="symbol glyphicon glyphicon-log-in"></span><a class="nav_link user_link" href="/login">Влизане</a></li>
-      {% endif %}
-      </ul>
-  </div>
-
-  <div class = "POST">
-    <img src="https://cdn.pixabay.com/photo/2015/05/26/09/37/paypal-784404_960_720.png" alt="Register">
-
-  <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-  <input type="hidden" name="cmd" value="_donations" />
-  <input type="hidden" name="business" value="domdarenie@gmail.com" />
-  <input type="hidden" name="currency_code" value="EUR" />
-  <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
-  <img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
-  </form>
-  </div>
-
-
-
-
+            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                <input type="hidden" name="cmd" value="_donations" />
+                <input type="hidden" name="business" value="domdarenie@gmail.com" />
+                <input type="hidden" name="currency_code" value="EUR" />
+                <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+                <img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
+            </form>
+        </div>
 
 </body>
 </html>

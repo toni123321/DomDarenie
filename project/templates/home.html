@@ -19,53 +19,50 @@
 
 <body>
 
-  <div>
-
-    <ul id="navbar">
-      <li class="navbar_link"><a class="nav_link" href="/home">Начало</a></li>
-      <li class="navbar_link"><a class="nav_link" href="/contacts">Контакти</a></li>
-      <li class="navbar_link"><a class="nav_link" href="/about">За проекта</a></li>
-      <li class="navbar_link"><a class="nav_link" href="" >Дарете сега</a>
-          <ul >
-            <li>
-              <a href="/online">Онлайн</a>
-              <a class = "punct" href="/donators">Топ 3 дарители</a>
+    <div>
+        <ul id="navbar">
+            <li class="navbar_link"><a class="nav_link" href="/home">Начало</a></li>
+            <li class="navbar_link"><a class="nav_link" href="/contacts">Контакти</a></li>
+            <li class="navbar_link"><a class="nav_link" href="/about">За проекта</a></li>
+            <li class="navbar_link"><a class="nav_link" href="" >Дарете сега</a>
+                <ul >
+                    <li>
+                      <a href="/online">Онлайн</a>
+                      <a class = "punct" href="/donators">Топ 3 дарители</a>
+                    </li>
+                </ul>
             </li>
-
+            {%if user_login%}
+            <li class="navbar_link user_link"><span class="symbol glyphicon glyphicon-log-in"></span><a class="nav_link user_link" href="/logout">Излизане</a></li>
+            {% else %}
+            <li class="navbar_link"><a class="nav_link" href="/orphan_homes">Домове</a>
+            <li class="navbar_link user_link"><span class="symbol glyphicon glyphicon-user"></span><a class="nav_link user_link" href="/register">Регистрация</a></li>
+            <li class="navbar_link user_link"><span class="symbol glyphicon glyphicon-log-in"></span><a class="nav_link user_link" href="/login">Влизане</a></li>
+            {% endif %}
         </ul>
-       </li>
-      {%if user_login%}
-       <li class="navbar_link user_link"><span class="symbol glyphicon glyphicon-log-in"></span><a class="nav_link user_link" href="/logout">Излизане</a></li>
-      {% else %}
-       <li class="navbar_link"><a class="nav_link" href="/orphan_homes">Домове</a>
-        <li class="navbar_link user_link"><span class="symbol glyphicon glyphicon-user"></span><a class="nav_link user_link" href="/register">Регистрация</a></li>
-        <li class="navbar_link user_link"><span class="symbol glyphicon glyphicon-log-in"></span><a class="nav_link user_link" href="/login">Влизане</a></li>
-      {% endif %}
-      </ul>
-  </div>
+    </div>
 
-</div>
-  <div class = "section" ><iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d120217.3284922105!2d23.279142264179665!3d42.68476483566705!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1slidl!5e1!3m2!1sbg!2sbg!4v1552777189867"></iframe>
-        </div>
-            <h1>Топ 3 Пунктове </h1>
-            <br>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-sm-4">
-                            <h3>TUES</h3>
-                              <p>1750 ж.к. Младост 1, София <br> понеделник - петък: 08:00 - 20:00 часа</p>
-                        </div>
+    </div>
+      <div class = "section" ><iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d120217.3284922105!2d23.279142264179665!3d42.68476483566705!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1slidl!5e1!3m2!1sbg!2sbg!4v1552777189867"></iframe>
+          </div>
+                <h1>Топ 3 Пунктове </h1>
+                <br>
+                    <div class="container">
+                        <div class="row">
                             <div class="col-sm-4">
-                              <h3>BULMAG</h3>
-                                <p>Младост IV, ул. "Васил Радославов" 6, Бизнес Парк София (зад Технополис)<br> понеделник - неделя: 10:00 - 20:00 часа</p>
+                                <h3>TUES</h3>
+                                <p>1750 ж.к. Младост 1, София <br> понеделник - петък: 08:00 - 20:00 часа</p>
+                            </div>
+                            <div class="col-sm-4">
+                                  <h3>BULMAG</h3>
+                                  <p>Младост IV, ул. "Васил Радославов" 6, Бизнес Парк София (зад Технополис)<br> понеделник - неделя: 10:00 - 20:00 часа</p>
                             </div>
                             <div class="col-sm-4">
                                 <h3>CHILDHELP</h3>
                                 <p>бул. Транспортна 31, Mall Burgas Plaza <br>Понеделник - Неделя: 10:00 - 22:00</p>
                             </div>
-                    </div>
-                </div>
-
+                        </div>
+                    </div>    
 </body>
 
 </html>
