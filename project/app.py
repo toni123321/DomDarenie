@@ -1,5 +1,7 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, flash, request
+from wtforms import Form, TextField, TextAreaField, validators, StringField, SubmitField
 
+DEBUG = True
 app = Flask(__name__)
 
 @app.route('/')
@@ -42,8 +44,11 @@ def posts():
 def contacts():
 	return render_template('contacts.html')
 
-				
+@app.route('/result',methods = ['POST', 'GET'])
+def result():
+   if request.method == 'POST':
+      result = request.form
+      return render_template("result.html",result = result)
+
 if __name__ == '__main__':
-	app.run()
-	
-	
+   app.run()
