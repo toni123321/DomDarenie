@@ -20,15 +20,15 @@ user_l = User_login()
 
 @app.route('/')
 def index():
-	return render_template('home.html')
+	return render_template('home.html', user_login = user_l.is_login())
 
 @app.route('/home')
 def home():
-	return render_template('home.html')
+	return render_template('home.html', user_login = user_l.is_login())
 	
 @app.route('/orphan_homes')
 def orphan_homes():
-	return render_template('orphan_homes.html')
+	return render_template('orphan_homes.html', user_login = user_l.is_login())
 		
 @app.route('/map')
 def map():
@@ -40,42 +40,24 @@ def login():
 	
 @app.route('/register')
 def register():
-	"""msga = "initial msg"
-	try:   			
-   		with sqlite3.connect("database.db") as con:
-   			cur = con.cursor()
-   			cur.execute("select * from user")
-   			con.execute("INSERT INTO user (fname, sname, email, username, password) VALUES ('Gosho', 'Goshev', 'goshko@abv', 'goshev', 'neshto')")
-   			con.commit()
-   			msga = "Record succesfully added"
-   			msga = cur.fetchall()
-
-
-   	except:
-   		con.rollback()
-   		msga = "error"
-
-   	finally:
-   		return render_template('result.html', msg = msga)
-   		con.close()"""
 	return render_template('register.html')
 
 @app.route('/about')
 def about():
-	return render_template('about.html')
+	return render_template('about.html', user_login = user_l.is_login())
 	
 @app.route('/donators')
 def donate():
-	return render_template('donators.html')
+	return render_template('donators.html', user_login = user_l.is_login())
 
 @app.route('/online')
 def online():
-	return render_template('online.html')
+	return render_template('online.html', user_login = user_l.is_login())
 
 	
 @app.route('/contacts')
 def contacts():
-	return render_template('contacts.html')
+	return render_template('contacts.html', user_login = user_l.is_login())
 
 @app.route('/result', methods = ['POST', 'GET'])
 def result():
@@ -124,7 +106,12 @@ def loggedin():
 			msga = "Username and password don't match"
 		finally:
 			con.close()
-			return render_template('loggedin.html', msg = user_l.is_login())
+			return render_template('loggedin.html', msg = msga)
+
+@app.route('/logout')
+def logout():
+	user_l.logout()
+	return render_template('home.html')
 
 
 if __name__ == '__main__':
