@@ -4,6 +4,20 @@ import sqlite3
 
 app = Flask(__name__)
 
+class User_login:
+	logged_in = False
+
+	def is_login(self):
+		return self.logged_in
+
+	def login(self):
+		self.logged_in = True
+
+	def logout(self):
+		self.logged_in = False
+
+user_l = User_login()
+
 @app.route('/')
 def index():
 	return render_template('home.html')
@@ -78,7 +92,6 @@ def result():
    				cur.execute("INSERT INTO user (fname, sname, email, username, password) VALUES (?, ?, ?, ?, ?)", (fn, sn, em, us, ps) )
    				con.commit()
    				msga = "Record succesfully added"
-
    		except:
    			con.rollback()
    			msga = "error"
@@ -88,8 +101,8 @@ def result():
    			return render_template('result.html', msg = msga)
 
 
-@app.route('/res', methods = ['POST', 'GET'])
-def res():
+@app.route('/loggedin', methods = ['POST', 'GET'])
+def loggedin():
 	if request.method == 'POST':
 		msga = "initial msg"
 		try:
@@ -100,19 +113,18 @@ def res():
 				cur = con.cursor()
 				cur.execute("select * from user WHERE username = ? AND password = ?", (us, ps))
 				con.commit()
-				
+
 				if(cur.fetchone() == None):
-					#msga = cur.fetchall()
 					raise Exception()
 				else:
-					msga = "There is user with that nickname" 
+					user_l.login()
+					msga = us 
 		except :
 			con.rollback()
 			msga = "Username and password don't match"
-			#msga = cur.fetchall()
 		finally:
 			con.close()
-			return render_template('res.html', msg = msga)
+			return render_template('loggedin.html', msg = user_l.is_login())
 
 
 if __name__ == '__main__':
