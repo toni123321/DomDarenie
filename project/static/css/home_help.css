@@ -1,0 +1,35 @@
+body {
+	background-image: url("../img/orphan-help.jpg");
+	background-repeat: no-repeat;
+	background-size: 100%;
+	background-position: 50% -10%;
+
+}
+u {
+	color:blue;
+}
+span {
+	color:green;
+}
+
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 80%;
+  margin-left:30px;
+  color:green;
+}
+
+td, th {
+  border: 1px solid black;
+  text-align: left;
+  padding: 8px;
+}
+
+th {
+  color:brown!important;
+  background-color: #dddddd;
+}
+
+

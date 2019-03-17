@@ -37,7 +37,11 @@ def home():
 @app.route('/orphan_homes')
 def orphan_homes():
 	return render_template('orphan_homes.html', user_login = user_l.is_login())
-		
+
+@app.route('/home_help')
+def home_help():
+	return render_template('home_help.html')
+			
 @app.route('/map')
 def map():
 	return render_template('map.html')

@@ -1,12 +1,18 @@
 body {
-	background:lighblue;
+	background:lightblue;
+	
 }
 
 
-.content ol li {
-	background-color:white;
+.content{
 	margin-top:150px;
+	margin-left:100px;
 	color:blue;
+}
+
+.homes {
+	margin-top:30px;
+	font-size:30px;
 }
 
 .info {
