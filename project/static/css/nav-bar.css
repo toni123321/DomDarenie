@@ -20,10 +20,6 @@
   color: white;
 }
 
-.navbar_link:hover {
-  background-color: #111;
-}
-
 .nav_link:hover {
   text-decoration: none;
   color: white;
