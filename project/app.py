@@ -6,6 +6,10 @@ app = Flask(__name__)
 
 class User_login:
 	logged_in = False
+	username = None
+	fname = None
+	sname = None
+	email = None
 
 	def is_login(self):
 		return self.logged_in
@@ -14,6 +18,10 @@ class User_login:
 		self.logged_in = True
 
 	def logout(self):
+		username = None
+		fname = None
+		sname = None
+		email = None
 		self.logged_in = False
 
 user_l = User_login()
@@ -59,8 +67,8 @@ def online():
 def contacts():
 	return render_template('contacts.html', user_login = user_l.is_login())
 
-@app.route('/result', methods = ['POST', 'GET'])
-def result():
+@app.route('/user', methods = ['POST', 'GET'])
+def user():
    if request.method == 'POST':
    		try:
    			fn = request.form['fname']
@@ -73,14 +81,16 @@ def result():
    				cur = con.cursor()
    				cur.execute("INSERT INTO user (fname, sname, email, username, password) VALUES (?, ?, ?, ?, ?)", (fn, sn, em, us, ps) )
    				con.commit()
-   				msga = "Record succesfully added"
+   				user_l.login()
+   				user_l.username = us
+   				user_l.fname = fn
+   				user_l.sname = sn
+   				user_l.email = em
    		except:
    			con.rollback()
-   			msga = "error"
-
    		finally:
    			con.close()
-   			return render_template('result.html', msg = msga)
+   			return render_template('user.html')
 
 
 @app.route('/loggedin', methods = ['POST', 'GET'])
@@ -93,26 +103,38 @@ def loggedin():
 
 			with sqlite3.connect("database.db") as con:
 				cur = con.cursor()
-				cur.execute("select * from user WHERE username = ? AND password = ?", (us, ps))
+				cur.execute("select fname, sname, email, username from user WHERE username = ? AND password = ?", (us, ps))
 				con.commit()
-
-				if(cur.fetchone() == None):
+				user = cur.fetchone()
+				if(user == None):
 					raise Exception()
 				else:
 					user_l.login()
+					user_l.username = user[3]
+					user_l.fname = user[0]
+	   				user_l.sname = user[1]
+	   				user_l.email = user[2]
 					msga = us 
 		except :
 			con.rollback()
-			msga = "Username and password don't match"
 		finally:
 			con.close()
-			return render_template('loggedin.html', msg = msga)
+			if(msga == us):
+				return render_template('loggedin.html', msg = msga)
+			else:
+				return render_template('exists.html')
 
 @app.route('/logout')
 def logout():
 	user_l.logout()
 	return render_template('home.html')
 
+@app.route('/myprofile')
+def myprofile():
+	return render_template('myprofile.html', username = user_l.username,
+												fname = user_l.fname,
+												sname = user_l.sname,
+												email = user_l.email)
 
 if __name__ == '__main__':
    app.run()
