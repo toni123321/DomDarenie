@@ -41,7 +41,18 @@ def orphan_homes():
 @app.route('/home_help')
 def home_help():
 	return render_template('home_help.html')
-			
+	
+
+@app.route('/home_star')
+def home_star():
+	return render_template('home_star.html')
+
+
+@app.route('/home_newfuture')
+def home_newfuture():
+	return render_template('home_newfuture.html')
+	
+				
 @app.route('/map')
 def map():
 	return render_template('map.html')
