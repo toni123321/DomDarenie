@@ -4,17 +4,21 @@
 }
 
 img{
+  margin-left: 670px;
   weight: 100px;
   height: 100px;
 }
 
 body{
-		background-image: url("../img/snimka.jpg");
+		background-image: url("../img/background_profile.png");
 		background-repeat: no-repeat;
 		background-size: 100%;
 		background-position: 100% 5%;
 	}
-
+h1 {
+  text-align: center;
+  color: blue;
+}
 .post{
   display: block;
   float:inherit;
