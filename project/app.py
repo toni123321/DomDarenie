@@ -86,6 +86,8 @@ def online():
 def contacts():
 	return render_template('contacts.html', user_login = user_l.is_login())
 
+
+
 @app.route('/user', methods = ['POST', 'GET'])
 def user():
    if request.method == 'POST':
@@ -110,6 +112,29 @@ def user():
    		finally:
    			con.close()
    			return render_template('user.html')
+
+@app.route('/user_dom', methods= ['POST', 'GET'])
+def user_dom():
+   if request.method == 'POST':
+   		try:
+   			n = request.form['name']
+   			ad = request.form['address']
+   			em = request.form['email']
+   			ps = request.form['password']
+
+   			with sqlite3.connect("database.db") as con:
+   				cur = con.cursor()
+   				cur.execute("INSERT INTO dom (name, address, email, password) VALUES (?, ?, ?, ?)", (n, ad, em, ps) )
+   				con.commit()
+   				user_l.login()
+   				user_l.name = n
+   				user_l.address = ad
+   				user_l.email = em
+   		except:
+   			con.rollback()
+   		finally:
+   			con.close()
+   			return render_template('user_dom.html')
 
 
 @app.route('/loggedin', methods = ['POST', 'GET'])
