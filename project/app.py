@@ -33,7 +33,7 @@ def index():
 @app.route('/home')
 def home():
 	return render_template('home.html', user_login = user_l.is_login())
-	
+
 @app.route('/orphan_homes')
 def orphan_homes():
 	return render_template('orphan_homes.html', user_login = user_l.is_login())
@@ -41,7 +41,7 @@ def orphan_homes():
 @app.route('/home_help')
 def home_help():
 	return render_template('home_help.html')
-	
+
 
 @app.route('/home_star')
 def home_star():
@@ -51,8 +51,8 @@ def home_star():
 @app.route('/home_newfuture')
 def home_newfuture():
 	return render_template('home_newfuture.html')
-	
-				
+
+
 @app.route('/map')
 def map():
 	return render_template('map.html')
@@ -60,15 +60,19 @@ def map():
 @app.route('/login')
 def login():
 	return render_template('login.html')
-	
+
 @app.route('/register')
 def register():
 	return render_template('register.html')
 
+@app.route('/registerDom')
+def registerDom():
+	return render_template('registerDom.html')
+
 @app.route('/about')
 def about():
 	return render_template('about.html', user_login = user_l.is_login())
-	
+
 @app.route('/donators')
 def donate():
 	return render_template('donators.html', user_login = user_l.is_login())
@@ -77,7 +81,7 @@ def donate():
 def online():
 	return render_template('online.html', user_login = user_l.is_login())
 
-	
+
 @app.route('/contacts')
 def contacts():
 	return render_template('contacts.html', user_login = user_l.is_login())
@@ -129,7 +133,7 @@ def loggedin():
 					user_l.fname = user[0]
 	   				user_l.sname = user[1]
 	   				user_l.email = user[2]
-					msga = us 
+					msga = us
 		except :
 			con.rollback()
 		finally:
