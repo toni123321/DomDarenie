@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="../static/css/contacts.css">
     <link rel="stylesheet" type="text/css" href="../static/css/nav-bar.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/registerDom.css">
+    <script src= "../static/js/dropdown.js"></script>
 
 </head>
 <body>
@@ -25,14 +27,23 @@
                 </li>
     		    </ul>
     		</li>
-    		
+
         {%if user_login%}
         <li class="navbar_link"><a class="nav_link" href="/orphan_homes">Домове</a>
         <li class="navbar_link user_link"><span class="symbol glyphicon glyphicon-log-in"></span><a class="nav_link user_link" href="/logout">Излизане</a></li>
         <li class="navbar_link user_link"><span class="symbol glyphicon glyphicon-user"></span><a class="nav_link user_link" href="/myprofile">Профил</a></li>
         {% else %}
-        
-        <li class="navbar_link user_link"><span class="symbol glyphicon glyphicon-user"></span><a class="nav_link user_link" href="/register">Регистрация</a></li>
+
+        <li class="navbar_link user_link"><span class="symbol glyphicon glyphicon-user">
+
+          <div class="dropdown">
+              <button onclick="myFunction()" class="dropbtn">Регистрация</button>
+              <div id="myDropdown" class="dropdown-content">
+                <a href="/register">User</a>
+                <a href="/registerDom">Dom</a>
+              </div>
+          </div>
+        </li>
         <li class="navbar_link user_link"><span class="symbol glyphicon glyphicon-log-in"></span><a class="nav_link user_link" href="/login">Влизане</a></li>
         {% endif %}
     </div>
