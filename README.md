@@ -1,2 +1,2 @@
 # DomDarenie
-#  run whit Makefile
+#  run with Makefile
