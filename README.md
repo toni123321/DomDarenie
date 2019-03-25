@@ -1,2 +1,2 @@
 # DomDarenie
-# neshto
+#  run whit Makefile
