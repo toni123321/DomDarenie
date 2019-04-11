@@ -26,6 +26,7 @@ class User_login:
 
 user_l = User_login()
 
+
 @app.route('/')
 def index():
 	return render_template('home.html', user_login = user_l.is_login())
