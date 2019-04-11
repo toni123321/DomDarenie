@@ -13,6 +13,7 @@
     <link rel="stylesheet" type="text/css" href="../static/css/nav-bar.css">
     <link rel="stylesheet" type="text/css" href="../static/css/registerDom.css">
     <script src= "../static/js/dropdown.js"></script>
+    <script src= "../static/js/dropdown1.js"></script>
 </head>
 <body>
 
@@ -40,7 +41,16 @@
                   </div>
               </div>
             </li>
-            <li class="navbar_link user_link"><span class="symbol glyphicon glyphicon-log-in"></span><a class="nav_link user_link" href="/login">Влизане</a></li>
+
+            <li class="navbar_link user_link"><span class="symbol glyphicon glyphicon-log-in">
+              <div class="dropdown">
+                  <button onclick="myFunction1()" class="dropbtn">Влизане</button>
+                  <div id="Dropdown1" class="dropdown-content">
+                    <a href="/login">User</a>
+                    <a href="/loginDom">Dom</a>
+                  </div>
+              </div>
+            </li>
         </ul>
     </div>
 

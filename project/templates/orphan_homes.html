@@ -9,6 +9,7 @@
     <link rel="stylesheet" type="text/css" href="../static/css/nav-bar.css">
     <link rel="stylesheet" type="text/css" href="../static/css/registerDom.css">
     <script src= "../static/js/dropdown.js"></script>
+    <script src= "../static/js/dropdown1.js"></script>
 </head>
 <body>
   <div>
@@ -30,17 +31,28 @@
           <li class="navbar_link"><a class="nav_link" href="/orphan_homes">Домове</a>
           <li class="navbar_link user_link"><span class="symbol glyphicon glyphicon-log-in"></span><a class="nav_link user_link" href="/logout">Излизане</a></li>
           {% else %}
-          <li class="navbar_link user_link"><span class="symbol glyphicon glyphicon-user">
 
-            <div class="dropdown">
-                <button onclick="myFunction()" class="dropbtn">Регистрация</button>
-                <div id="myDropdown" class="dropdown-content">
-                  <a href="/register">User</a>
-                  <a href="/registerDom">Dom</a>
-                </div>
-            </div>
-          </li>
-          <li class="navbar_link user_link"><span class="symbol glyphicon glyphicon-log-in"></span><a class="nav_link user_link" href="/login">Влизане</a></li>
+                <li class="navbar_link user_link"><span class="symbol glyphicon glyphicon-user">
+
+                      <div class="dropdown">
+                          <button onclick="myFunction()" class="dropbtn">Регистрация</button>
+                          <div id="myDropdown" class="dropdown-content">
+                            <a href="/register">User</a>
+                            <a href="/registerDom">Dom</a>
+                          </div>
+                      </div>
+                    </li>
+
+                    <li class="navbar_link user_link"><span class="symbol glyphicon glyphicon-log-in">
+                      <div class="dropdown">
+                          <button onclick="myFunction1()" class="dropbtn">Влизане</button>
+                          <div id="Dropdown1" class="dropdown-content">
+                            <a href="/login">User</a>
+                            <a href="/loginDom">Dom</a>
+                          </div>
+                      </div>
+                    </li>
+
           {% endif %}
       </ul>
   </div>
