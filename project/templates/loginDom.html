@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Log in</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/nav-bar.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/login.css">
+</head>
+<body>
+
+    <ul id="navbar">
+        <li class="navbar_link"><a class="nav_link" href="/home">Начало</a></li>
+      	<li class="navbar_link"><a class="nav_link" href="/contacts">Контакти</a></li>
+    		<li class="navbar_link"><a class="nav_link" href="/about">За проекта</a></li>
+		    <li class="navbar_link"><a class="nav_link" href="" >Дарете сега</a>
+            <ul>
+                <li>
+                    <a href="/online">Онлайн</a>
+                    <a class = "punct" href="/donators">Топ 3 дарители</a>
+                </li>
+		        </ul>
+		    </li>
+
+        <li class="navbar_link user_link"><span class="symbol glyphicon glyphicon-user"></span><a class="nav_link user_link" href="/register">Регистрация</a></li>
+        <li class="navbar_link user_link"><span class="symbol glyphicon glyphicon-log-in"></span><a class="nav_link user_link" href="/login">Влизане</a></li>
+    </ul>
+
+
+
+
+    <div class= "post">
+        <img src="../static/img/loginDom.png" alt="log in  Dom">
+        <h2>Log in Dom </h2>
+        <form action="/loggedin"  method="POST">
+          DomName<br>
+          <br>
+          <input type="text" id="Name" name="name" placeholder="DomName" required autofocus>
+          <br>
+          <br>Password<br>
+          <br>
+          <input type="password" id="inputPassword" name="password" placeholder="Password" required>
+          <br>
+          <br><br>
+          <input type="submit" value="Log in">
+        </form>
+    </div>
+
+
+</body>
+</html>

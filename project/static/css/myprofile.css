@@ -22,7 +22,8 @@ h1 {
 .post{
   display: block;
   float:inherit;
-  color: blue;
+  color: blue
+;
   text-align: center;
   padding: 24px 16px;
   text-decoration: none;
