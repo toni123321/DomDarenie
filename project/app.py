@@ -152,7 +152,7 @@ def loggedinDom():
 
 			with sqlite3.connect("database.db") as con:
 				cur = con.cursor()
-				cur.execute("select name, address, email from user WHERE name = ? AND password = ?", (us, ps))
+				cur.execute("select name, email from dom WHERE name = ? AND password = ?", (us, ps))
 				con.commit()
 				user = cur.fetchone()
 				if(user == None):
@@ -160,14 +160,14 @@ def loggedinDom():
 				else:
 					user_l.login()
 					user_l.name = user[0]
-	   				user_l.email = user[2]
+	   				user_l.email = user[1]
 					msga = us
 		except :
 			con.rollback()
 		finally:
 			con.close()
 			if(msga == us):
-				return render_template('loggedin.html', msg = msga)
+				return render_template('loggedinDom.html', msg = msga)
 			else:
 				return render_template('exists.html')
 
