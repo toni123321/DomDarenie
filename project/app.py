@@ -146,6 +146,7 @@ def user_dom():
 def loggedinDom():
 	if request.method == 'POST':
 		msga = "initial msg"
+		is_dom = "msg"
 		try:
 			us = request.form['name']
 			ps = request.form['password']
@@ -158,6 +159,7 @@ def loggedinDom():
 				if(user == None):
 					raise Exception()
 				else:
+					is_dom = "dom"
 					user_l.login()
 					user_l.name = user[0]
 	   				user_l.email = user[1]
@@ -167,7 +169,7 @@ def loggedinDom():
 		finally:
 			con.close()
 			if(msga == us):
-				return render_template('loggedinDom.html', msg = msga)
+				return render_template('loggedinDom.html', msg = msga, msg2 = is_dom)
 			else:
 				return render_template('exists.html')
 
@@ -214,6 +216,9 @@ def myprofile():
 												fname = user_l.fname,
 												sname = user_l.sname,
 												email = user_l.email)
-
+@app.route('/myprofileDom')
+def myprofileDom():
+	return render_template('myprofileDom.html', name = user_l.name,
+												email = user_l.email)
 if __name__ == '__main__':
    app.run()
