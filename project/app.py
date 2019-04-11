@@ -61,6 +61,11 @@ def map():
 def login():
 	return render_template('login.html')
 
+@app.route('/loginDom')
+def loginDom():
+	return render_template('loginDom.html')
+
+
 @app.route('/register')
 def register():
 	return render_template('register.html')
@@ -137,6 +142,35 @@ def user_dom():
    			return render_template('user_dom.html')
 
 
+@app.route('/loggedinDom', methods = ['POST', 'GET'])
+def loggedinDom():
+	if request.method == 'POST':
+		msga = "initial msg"
+		try:
+			us = request.form['name']
+			ps = request.form['password']
+
+			with sqlite3.connect("database.db") as con:
+				cur = con.cursor()
+				cur.execute("select name, address, email from user WHERE name = ? AND password = ?", (us, ps))
+				con.commit()
+				user = cur.fetchone()
+				if(user == None):
+					raise Exception()
+				else:
+					user_l.login()
+					user_l.name = user[0]
+	   				user_l.email = user[2]
+					msga = us
+		except :
+			con.rollback()
+		finally:
+			con.close()
+			if(msga == us):
+				return render_template('loggedin.html', msg = msga)
+			else:
+				return render_template('exists.html')
+
 @app.route('/loggedin', methods = ['POST', 'GET'])
 def loggedin():
 	if request.method == 'POST':
@@ -167,6 +201,7 @@ def loggedin():
 				return render_template('loggedin.html', msg = msga)
 			else:
 				return render_template('exists.html')
+
 
 @app.route('/logout')
 def logout():
