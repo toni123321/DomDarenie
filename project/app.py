@@ -10,19 +10,27 @@ class User_login:
 	fname = None
 	sname = None
 	email = None
+	loger = None
+
 
 	def is_login(self):
 		return self.logged_in
 
-	def login(self):
+	def login_User(self):
 		self.logged_in = True
+		self.loger = True
+
+	def login_Dom(self):
+		self.logged_in = True
+		self.loger = False
 
 	def logout(self):
-		username = None
-		fname = None
-		sname = None
-		email = None
+		self.username = None
+		self.fname = None
+		self.sname = None
+		self.email = None
 		self.logged_in = False
+		self.loger = None
 
 user_l = User_login()
 
@@ -108,7 +116,7 @@ def user():
    				cur = con.cursor()
    				cur.execute("INSERT INTO user (fname, sname, email, username, password) VALUES (?, ?, ?, ?, ?)", (fn, sn, em, us, ps) )
    				con.commit()
-   				user_l.login()
+   				user_l.login_User()
    				user_l.username = us
    				user_l.fname = fn
    				user_l.sname = sn
@@ -132,7 +140,7 @@ def user_dom():
    				cur = con.cursor()
    				cur.execute("INSERT INTO dom (name, address, email, password) VALUES (?, ?, ?, ?)", (n, ad, em, ps) )
    				con.commit()
-   				user_l.login()
+   				user_l.login_Dom()
    				user_l.name = n
    				user_l.address = ad
    				user_l.email = em
@@ -161,8 +169,8 @@ def loggedinDom():
 					raise Exception()
 				else:
 					is_dom = "dom"
-					user_l.login()
-					user_l.name = user[0]
+					user_l.login_Dom()
+					user_l.username = user[0]
 	   				user_l.email = user[1]
 					msga = us
 		except :
@@ -190,7 +198,7 @@ def loggedin():
 				if(user == None):
 					raise Exception()
 				else:
-					user_l.login()
+					user_l.login_User()
 					user_l.username = user[3]
 					user_l.fname = user[0]
 	   				user_l.sname = user[1]
@@ -213,13 +221,13 @@ def logout():
 
 @app.route('/myprofile')
 def myprofile():
-	return render_template('myprofile.html', username = user_l.username,
-												fname = user_l.fname,
-												sname = user_l.sname,
-												email = user_l.email)
-@app.route('/myprofileDom')
-def myprofileDom():
-	return render_template('myprofileDom.html', name = user_l.name,
-												email = user_l.email)
+	if(user_l.loger):
+		return render_template('myprofile.html', username = user_l.username,
+													fname = user_l.fname,
+													sname = user_l.sname,
+													email = user_l.email)
+	else:
+		return render_template('myprofileDom.html', name = user_l.username,
+													email = user_l.email)
 if __name__ == '__main__':
    app.run()
