@@ -89,7 +89,16 @@ def about():
 
 @app.route('/donators')
 def donate():
-	return render_template('donators.html', user_login = user_l.is_login())
+	try:
+		with sqlite3.connect("database.db") as con:
+			cur = con.cursor()
+			cur.execute("select id, fname from user")
+			user = cur.fetchall()
+	except:
+		con.rollback()
+	finally:
+		con.close()
+		return render_template('donators.html', user = user, len=len(user))
 
 @app.route('/online')
 def online():
@@ -236,12 +245,12 @@ def orphans():
 			cur = con.cursor()
 			cur.execute("select id, name from dom")
 			orphans = cur.fetchall()
-			#orphans = ['2', '5']		
+			#orphans = ['2', '5']
 	except:
 		con.rollback()
 	finally:
 		con.close()
-		return render_template('orphan_homes.html', orphans = orphans, 
+		return render_template('orphan_homes.html', orphans = orphans,
 													len = len(orphans))
 
 @app.route('/orphan_help/<id>')
@@ -250,13 +259,13 @@ def orphan_help(id):
 		with sqlite3.connect("database.db") as con:
 			cur = con.cursor()
 			cur.execute("select name, address from dom WHERE id = ?", (id))
-			orphan = cur.fetchone()	
+			orphan = cur.fetchone()
 	except:
 		con.rollback()
 	finally:
 		con.close()
-		return render_template('home_help.html', name = orphan[0], 
-													address = orphan[1])	
+		return render_template('home_help.html', name = orphan[0],
+													address = orphan[1])
 
 
 

@@ -59,25 +59,14 @@
     <br>
         <div class="container">
             <div class="row">
+              {% for i in range(len) %}
                 <div class="col-sm-4">
-                    <h3>1.Тошка</h3>
-                    <p class = "text">email:</p>
-                    <br>
-                    <p>Дарени средства</p>
+                    <h3>{{i+1}}.{{user[i][1]}}</h3>
+
                 </div>
-                    <div class="col-sm-4">с
-                        <h3>2.Пешо</h3>
-                        <p class = "text">email:</p>
-                        <br>
-                        <p>Дарени средства</p>
-                    </div>
-                    <div class="col-sm-4">
-                        <h3>3.Гошо</h3>
-                        <p class = "text">email:</p>
-                        <br>
-                        <p>Дарени средства</p>
-                    </div>
+              {% endfor %}
             </div>
+
         </div>
 
 </body>
