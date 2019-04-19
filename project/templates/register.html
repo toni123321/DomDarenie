@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Register</title>
+    <title>Регистрация</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="Login.css">
@@ -36,8 +36,8 @@
               <div class="dropdown">
                   <button onclick="myFunction()" class="dropbtn">Регистрация</button>
                   <div id="myDropdown" class="dropdown-content">
-                    <a href="/register">User</a>
-                    <a href="/registerDom">Dom</a>
+                    <a href="/register">Дарители</a>
+                    <a href="/registerDom">Домове</a>
                   </div>
               </div>
             </li>
@@ -46,8 +46,8 @@
               <div class="dropdown">
                   <button onclick="myFunction1()" class="dropbtn">Влизане</button>
                   <div id="Dropdown1" class="dropdown-content">
-                    <a href="/login">User</a>
-                    <a href="/loginDom">Dom</a>
+                    <a href="/login">Дарител</a>
+                    <a href="/loginDom">Дом</a>
                   </div>
               </div>
             </li>
@@ -56,33 +56,33 @@
 
     <div class= "post">
         <img src="https://www.wildwoodhillsranch.org/wp-content/uploads/2016/10/Register-icon-01.png" alt="Register">
-            <h2>Register</h2>
+            <h2>Регистрация</h2>
         <form action="http://localhost:5000/user" target="" method="POST">
-            First Name<br>
+            Име<br>
             <br>
-            <input type="text" id="firstName" name="fname" placeholder="First Name" required autofocus>
+            <input type="text" id="firstName" name="fname" placeholder="Име" required autofocus>
             <br>
-            <br>Second Name<br>
+            <br>Фамилия<br>
             <br>
-            <input type="text" id="secondName" name="sname" placeholder="Second Name" required autofocus>
+            <input type="text" id="secondName" name="sname" placeholder="Фамилия" required autofocus>
             <br>
-            <br>Username<br>
+            <br>Име на профил<br>
             <br>
-            <input type="text" id="userName" name="username" placeholder="Username" required autofocus>
+            <input type="text" id="userName" name="username" placeholder="Име на профил" required autofocus>
             <br>
-            <br>Email<br>
+            <br>Имейл<br>
             <br>
-            <input type="email" id="inputEmail" name="email" placeholder="Email" required autofocus>
+            <input type="email" id="inputEmail" name="email" placeholder="Имейл" required autofocus>
             <br>
-            <br>Password<br>
+            <br>Парола<br>
             <br>
-            <input type="password" id="inputPassword" name="password" placeholder="Password" required>
+            <input type="password" id="inputPassword" name="password" placeholder="Парола" required>
             <br>
-            <br>Confirm Password<br>
+            <br>Потвърдете паролата<br>
             <br>
-            <input type="password" id="confirm_password" name="second_pass" placeholder="Confirm Password" required>
+            <input type="password" id="confirm_password" name="second_pass" placeholder="Парола" required>
             <br><br>
-            <input type="submit" value="Register">
+            <input type="submit" value="Регистриране">
         </form>
     </div>
 

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Log in</title>
+    <title>Влизане</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -32,8 +32,8 @@
             <div class="dropdown">
                 <button onclick="myFunction()" class="dropbtn">Регистрация</button>
                 <div id="myDropdown" class="dropdown-content">
-                  <a href="/register">User</a>
-                  <a href="/registerDom">Dom</a>
+                  <a href="/register">Дарители</a>
+                  <a href="/registerDom">Домове</a>
                 </div>
             </div>
           </li>
@@ -42,8 +42,8 @@
             <div class="dropdown">
                 <button onclick="myFunction1()" class="dropbtn">Влизане</button>
                 <div id="Dropdown1" class="dropdown-content">
-                  <a href="/login">User</a>
-                  <a href="/loginDom">Dom</a>
+                  <a href="/login">Дарител</a>
+                  <a href="/loginDom">Дом</a>
                 </div>
             </div>
           </li>
@@ -55,18 +55,18 @@
 
     <div class= "post">
         <img src="../static/img/loginDom.png" alt="log in  Dom">
-        <h2>Log in Dom </h2>
+        <h2>Влизане като Дом</h2>
         <form action="/loggedinDom"  method="POST">
-          DomName<br>
+          Име на Дом<br>
           <br>
-          <input type="text" id="Name" name="name" placeholder="DomName" required autofocus>
+          <input type="text" id="Name" name="name" placeholder="Име на Дом" required autofocus>
           <br>
-          <br>Password<br>
+          <br>Парола<br>
           <br>
-          <input type="password" id="inputPassword" name="password" placeholder="Password" required>
+          <input type="password" id="inputPassword" name="password" placeholder="Парола" required>
           <br>
           <br><br>
-          <input type="submit" value="Log in">
+          <input type="submit" value="Влизане">
         </form>
     </div>
 
