@@ -229,5 +229,36 @@ def myprofile():
 	else:
 		return render_template('myprofileDom.html', name = user_l.username,
 													email = user_l.email)
+@app.route('/orphans')
+def orphans():
+	try:
+		with sqlite3.connect("database.db") as con:
+			cur = con.cursor()
+			cur.execute("select id, name from dom")
+			orphans = cur.fetchall()
+			#orphans = ['2', '5']		
+	except:
+		con.rollback()
+	finally:
+		con.close()
+		return render_template('orphan_homes.html', orphans = orphans, 
+													len = len(orphans))
+
+@app.route('/orphan_help/<id>')
+def orphan_help(id):
+	try:
+		with sqlite3.connect("database.db") as con:
+			cur = con.cursor()
+			cur.execute("select name, address from dom WHERE id = ?", (id))
+			orphan = cur.fetchone()	
+	except:
+		con.rollback()
+	finally:
+		con.close()
+		return render_template('home_help.html', name = orphan[0], 
+													address = orphan[1])	
+
+
+
 if __name__ == '__main__':
    app.run()
