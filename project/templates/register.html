@@ -16,7 +16,6 @@
     <script src= "../static/js/dropdown1.js"></script>
 </head>
 <body>
-
     <div>
         <ul id="navbar">
             <li class="navbar_link"><a class="nav_link" href="/home">Начало</a></li>
@@ -84,7 +83,9 @@
             <br><br>
             <input type="submit" value="Регистриране">
         </form>
+            {% extends "flash.html" %}
+    {%block body%}
+    {% endblock %}
     </div>
-
 </body>
 </html>

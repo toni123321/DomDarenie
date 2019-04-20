@@ -98,7 +98,7 @@ def donate():
 		con.rollback()
 	finally:
 		con.close()
-		return render_template('donators.html', user = user, len=len(user))
+		return render_template('donators.html', user = user, len=3)
 
 @app.route('/online')
 def online():

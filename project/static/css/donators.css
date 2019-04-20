@@ -24,3 +24,9 @@ h3 {
 .text {
   font-family: Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text", "Times New Roman", serif; font-size: 18px; font-style: normal; font-variant: normal; font-weight: bold; line-height: 15px;
 }
+h1{
+  padding-top: 2%;
+  margin-left: 45%;
+  font-family: Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text", "Times New Roman", serif; font-size: 40px; font-style: normal; font-variant: normal; font-weight: bold; line-height: 15px;
+  color:red;
+}
